@@ -1,12 +1,14 @@
 import React from 'react'
-import Navbar from '@/components/LandingPage/Navbar'
+// import Navbar from '@/components/LandingPage/Navbar'
 import WhyUs from '@/components/LandingPage/WhyUs'
+import HeroSection from '@/components/LandingPage/HeroSection';
 
 function Page() {
   return (
-    <div>
-      {/* Landing Page */}
-      <WhyUs />
+    <div >
+
+      <HeroSection />
+      {/* <WhyUs /> */}
     </div>
     
   );
