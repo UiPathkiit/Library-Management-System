@@ -105,12 +105,8 @@
 
 // export default ForgotPasswordForm;
 
-<<<<<<< HEAD
-import React from "react";
-=======
 
 import React from 'react'
->>>>>>> 68c500ec5a02c7bf9687ae95a86f9023460012c9
 
 const ForgotPasswordForm = () => {
   return (
@@ -148,14 +144,7 @@ const ForgotPasswordForm = () => {
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-  );
-};
-
-export default ForgotPasswordForm;
-=======
   )
 }
 
 export default ForgotPasswordForm
->>>>>>> 68c500ec5a02c7bf9687ae95a86f9023460012c9

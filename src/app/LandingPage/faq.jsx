@@ -84,11 +84,8 @@
 
 // export default Faq;
 
-<<<<<<< HEAD
-=======
 "use client";
 
->>>>>>> 68c500ec5a02c7bf9687ae95a86f9023460012c9
 import React, { useState } from "react";
 import Image from "next/image";
 
@@ -101,29 +98,6 @@ const Faq = () => {
 
   const faqs = [
     {
-<<<<<<< HEAD
-      question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-      answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    },
-    {
-      question: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet?",
-      answer:
-        "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipiscing elit.",
-    },
-    {
-      question: "Ut enim ad minima veniam, quis nostrum exercitationem ullam?",
-      answer: "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
-    },
-    {
-      question:
-        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit?",
-      answer:
-        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
-    },
-    {
-      question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-      answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-=======
       question: "How do I search for a book in the library?",
       answer: "You can search for a book using the search bar on the homepage. Simply enter the book title, author name, or keywords related to the book, and the system will display matching results from the catalog.",
     },
@@ -145,42 +119,10 @@ const Faq = () => {
     {
       question: "Can I access the library system on my phone?",
       answer: "Yes, the system is mobile-friendly and accessible via a web browser.",
->>>>>>> 68c500ec5a02c7bf9687ae95a86f9023460012c9
     },
   ];
 
   return (
-<<<<<<< HEAD
-    <div className="relative bg-gray-100 py-12">
-      {/* Background Image */}
-      <div className="absolute inset-0 -z-10 opacity-10">
-        <Image
-          width={1300}
-          height={1300}
-          alt="Library"
-          src="/assets/book.png"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="container mx-auto flex flex-col lg:flex-row items-start gap-8 px-6">
-        {/* Left Section */}
-        <div className="lg:w-1/2">
-          <h5 className="text-indigo-600 text-lg font-semibold">Frequently Asked Questions</h5>
-          <h2 className="text-3xl font-bold mt-2">
-            Let&apos;s clarify some of your questions
-          </h2>
-          <p className="text-gray-700 mt-4">
-            Find quick answers to common questions about searching, borrowing,
-            returning books, and using our library system effectively.
-          </p>
-          <div className="mt-6">
-            <Image
-              width={1300}
-              height={1300}
-              alt="Library"
-              src="/assets/booj.png"
-              className="rounded-lg shadow-lg"
-=======
     <div className="relative max-w-6xl mx-auto mt-16 p-6">
       {/* Background Image */}
       <div className="absolute top-[-80px] right-[-30px] z-0 opacity-70">
@@ -212,31 +154,11 @@ const Faq = () => {
               alt="Library"
               src="/assets/booj.png"
               className="rounded-lg"
->>>>>>> 68c500ec5a02c7bf9687ae95a86f9023460012c9
             />
           </div>
         </div>
 
         {/* Right Section */}
-<<<<<<< HEAD
-        <div className="lg:w-1/2">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="border-b border-gray-300 py-4"
-            >
-              <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleFAQ(index)}
-              >
-                <span className="text-lg font-medium">{faq.question}</span>
-                <span className="text-2xl font-bold">
-                  {openIndex === index ? "−" : "+"}
-                </span>
-              </div>
-              {openIndex === index && (
-                <div className="mt-2 text-gray-600">{faq.answer}</div>
-=======
         <div className="lg:w-1/2 space-y-4">
           {faqs.map((faq, index) => (
             <div
@@ -254,7 +176,6 @@ const Faq = () => {
                 <div className="px-4 py-3 bg-blue-200 text-gray-700 border-t border-gray-300">
                   {faq.answer}
                 </div>
->>>>>>> 68c500ec5a02c7bf9687ae95a86f9023460012c9
               )}
             </div>
           ))}
