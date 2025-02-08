@@ -8,7 +8,7 @@ const AuthPage = () => {
   return (
     <div className="flex flex-wrap md:flex-nowrap h-screen w-full bg-[#CDF6FB]">
       {/* Left - Login Section */}
-      <div className="w-full md:w-2/3 bg-[#CDF6FB] flex flex-col justify-center items-center p-6 md:p-10">
+      <div className="w-full md:w-1/2 bg-[#CDF6FB] flex flex-col justify-center items-center p-6 md:p-10">
         <h2 className="text-3xl md:text-5xl font-semibold mb-3 md:mb-4 font-sans">
           Welcome Back !!
         </h2>
@@ -37,7 +37,7 @@ const AuthPage = () => {
       </div>
 
       {/* Right - Signup Section */}
-      <div className="w-full md:w-1/3 bg-purple-600 flex flex-col justify-center items-center p-6 md:p-10 text-white  md:rounded-l-3xl">
+      <div className="w-full md:w-1/2 bg-purple-600 flex flex-col justify-center items-center p-6 md:p-10 text-white  md:rounded-l-3xl">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 md:mb-6">LIBRARY</h1>
         <p className="text-md md:text-lg mb-4 md:mb-6 text-center">
           New to our platform? Sign Up now.

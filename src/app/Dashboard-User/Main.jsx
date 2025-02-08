@@ -680,122 +680,447 @@
 
 
 
-"use client";
-import { useState } from "react";
-import { PieChart, Pie, Cell, Tooltip } from "recharts";
-import { FaBook, FaExchangeAlt, FaUsers, FaBars } from "react-icons/fa";
-import Borowed from "@/app/Dashboard-User/Borowed"
-import Lane from "@/app/Dashboard-User/Lane"
-import Link from "next/link";
+// "use client";
+// import { useState } from "react";
+// import { PieChart, Pie, Cell, Tooltip } from "recharts";
+// import { FaBook, FaExchangeAlt, FaUsers, FaBars } from "react-icons/fa";
+// import Borowed from "@/app/Dashboard-User/Borowed"
+// import Lane from "@/app/Dashboard-User/Lane"
+// import Link from "next/link";
 
-const Dashboard = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+// const Dashboard = () => {
+//   const [menuOpen, setMenuOpen] = useState(false);
 
-  const data = [
-    { name: "Borrowed Books", value: 600 },
-    { name: "Returned Books", value: 900 }
-  ];
-  const COLORS = ["#00C49F", "#0088FE"];
+//   const data = [
+//     { name: "Borrowed Books", value: 600 },
+//     { name: "Returned Books", value: 900 }
+//   ];
+//   const COLORS = ["#00C49F", "#0088FE"];
 
-  return (
-    <>
-    <div className="flex bg-gradient-to-br from-[#10111A] to-[#1A1C2D] min-h-screen text-white">
-      {/* Sidebar */}
-      <div className={`bg-[#1C1C2E] w-64 h-screen p-5 flex flex-col text-white fixed transition-all duration-300 ${menuOpen ? "left-0" : "-left-64"} md:left-0`}>
-        <h2 className="text-2xl font-bold mb-6">Library Name</h2>
-        <nav className="flex flex-col gap-4">
-          <a href="#" className="flex items-center gap-3 hover:text-gray-400"><FaBars /> Dashboard</a>
-          <a href="#" className="flex items-center gap-3 hover:text-gray-400"><FaBook /> Books</a>
-          <a href="#" className="flex items-center gap-3 hover:text-gray-400"><FaExchangeAlt /> Transactions</a>
-          <a href="#" className="flex items-center gap-3 hover:text-gray-400"><FaUsers /> Users</a>
-        </nav>
-        <div className="mt-auto">
-          <h3 className="text-sm text-gray-400">Account Menu</h3>
-          <Link href="/Borowed" className="block mt-2 hover:text-gray-400">Catalog</Link>
-          <a href="#" className="block hover:text-gray-400">Sign In</a>
-          <a href="#" className="block hover:text-gray-400">Sign Up</a>
-        </div>
-      </div>
+//   return (
+//     <>
+//     <div className="flex bg-gradient-to-br from-[#10111A] to-[#1A1C2D] min-h-screen text-white">
+//       {/* Sidebar */}
+//       <div className={`bg-[#1C1C2E] w-64 h-screen p-5 flex flex-col text-white fixed transition-all duration-300 ${menuOpen ? "left-0" : "-left-64"} md:left-0`}>
+//         <h2 className="text-2xl font-bold mb-6">Library Name</h2>
+//         <nav className="flex flex-col gap-4">
+//           <a href="#" className="flex items-center gap-3 hover:text-gray-400"><FaBars /> Dashboard</a>
+//           <a href="#" className="flex items-center gap-3 hover:text-gray-400"><FaBook /> Books</a>
+//           <a href="#" className="flex items-center gap-3 hover:text-gray-400"><FaExchangeAlt /> Transactions</a>
+//           <a href="#" className="flex items-center gap-3 hover:text-gray-400"><FaUsers /> Users</a>
+//         </nav>
+//         <div className="mt-auto">
+//           <h3 className="text-sm text-gray-400">Account Menu</h3>
+//           <Link href="/Borowed" className="block mt-2 hover:text-gray-400">Catalog</Link>
+//           <a href="#" className="block hover:text-gray-400">Sign In</a>
+//           <a href="#" className="block hover:text-gray-400">Sign Up</a>
+//         </div>
+//       </div>
 
-      {/* Main Dashboard */}
-      <div className="ml-0 md:ml-64 p-6 w-full">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-6">
-          <button className="md:hidden text-white" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
-          <h1 className="text-2xl font-bold">Dashboard</h1>
-          <input type="text" placeholder="Search here..." className="bg-[#2A2D3E] text-white p-2 rounded-lg w-64" />
-        </div>
+//       {/* Main Dashboard */}
+//       <div className="ml-0 md:ml-64 p-6 w-full">
+//         {/* Header */}
+//         <div className="flex justify-between items-center mb-6">
+//           <button className="md:hidden text-white" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
+//           <h1 className="text-2xl font-bold">Dashboard</h1>
+//           <input type="text" placeholder="Search here..." className="bg-[#2A2D3E] text-white p-2 rounded-lg w-64" />
+//         </div>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Overdue Borrowers */}
-          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#1A1C2D] p-4 rounded-2xl shadow-lg">
-            <h2 className="text-lg font-semibold mb-3">Overdue Borrowers</h2>
-            <ul>
-              <li className="flex justify-between">John Doe <span className="text-red-400">3 days overdue</span></li>
-              <li className="flex justify-between">Jane Smith <span className="text-red-400">5 days overdue</span></li>
-            </ul>
-          </div>
+//         {/* Grid Layout */}
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//           {/* Overdue Borrowers */}
+//           <div className="bg-gradient-to-br from-[#2A2D3E] to-[#1A1C2D] p-4 rounded-2xl shadow-lg">
+//             <h2 className="text-lg font-semibold mb-3">Overdue Borrowers</h2>
+//             <ul>
+//               <li className="flex justify-between">John Doe <span className="text-red-400">3 days overdue</span></li>
+//               <li className="flex justify-between">Jane Smith <span className="text-red-400">5 days overdue</span></li>
+//             </ul>
+//           </div>
 
-          {/* Library Admins */}
-          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#1A1C2D] p-4 rounded-2xl shadow-lg">
-            <h2 className="text-lg font-semibold mb-3">Library Admins</h2>
-            <ul>
-              <li>Admin 1</li>
-              <li>Admin 2</li>
-            </ul>
-          </div>
+//           {/* Library Admins */}
+//           <div className="bg-gradient-to-br from-[#2A2D3E] to-[#1A1C2D] p-4 rounded-2xl shadow-lg">
+//             <h2 className="text-lg font-semibold mb-3">Library Admins</h2>
+//             <ul>
+//               <li>Admin 1</li>
+//               <li>Admin 2</li>
+//             </ul>
+//           </div>
 
-          {/* Browse Available Books */}
-          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#1A1C2D] p-4 rounded-2xl shadow-lg">
-            <h2 className="text-lg font-semibold mb-3">Browse Available Book Inventory</h2>
-            <ul>
-              <li>Book A - 10 copies</li>
-              <li>Book B - 5 copies</li>
-            </ul>
-          </div>
+//           {/* Browse Available Books */}
+//           <div className="bg-gradient-to-br from-[#2A2D3E] to-[#1A1C2D] p-4 rounded-2xl shadow-lg">
+//             <h2 className="text-lg font-semibold mb-3">Browse Available Book Inventory</h2>
+//             <ul>
+//               <li>Book A - 10 copies</li>
+//               <li>Book B - 5 copies</li>
+//             </ul>
+//           </div>
 
-          {/* Books Ratio (Pie Chart) */}
-          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#1A1C2D] p-4 rounded-2xl shadow-lg flex flex-col items-center">
-            <h2 className="text-lg font-semibold mb-3">Books Ratio</h2>
-            <PieChart width={250} height={250}>
-              <Pie data={data} cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" paddingAngle={5} dataKey="value">
-                {data.map((_, index) => (<Cell key={`cell-${index}`} fill={COLORS[index]} />))}
-              </Pie>
-              <Tooltip />
-            </PieChart>
-          </div>
+//           {/* Books Ratio (Pie Chart) */}
+//           <div className="bg-gradient-to-br from-[#2A2D3E] to-[#1A1C2D] p-4 rounded-2xl shadow-lg flex flex-col items-center">
+//             <h2 className="text-lg font-semibold mb-3">Books Ratio</h2>
+//             <PieChart width={250} height={250}>
+//               <Pie data={data} cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#8884d8" paddingAngle={5} dataKey="value">
+//                 {data.map((_, index) => (<Cell key={`cell-${index}`} fill={COLORS[index]} />))}
+//               </Pie>
+//               <Tooltip />
+//             </PieChart>
+//           </div>
 
-          {/* Total Users and Books */}
-          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#1A1C2D] p-4 rounded-2xl shadow-lg">
-            <h2 className="text-lg font-semibold mb-3">Statistics</h2>
-            <div className="flex justify-between">
-              <div className="p-4 bg-[#2A2D3E] rounded-lg">
-                <p>Total Users</p>
-                <h3 className="text-xl font-bold">150</h3>
-              </div>
-              <div className="p-4 bg-[#2A2D3E] rounded-lg">
-                <p>Total Books</p>
-                <h3 className="text-xl font-bold">1500</h3>
-              </div>
-            </div>
-          </div>
+//           {/* Total Users and Books */}
+//           <div className="bg-gradient-to-br from-[#2A2D3E] to-[#1A1C2D] p-4 rounded-2xl shadow-lg">
+//             <h2 className="text-lg font-semibold mb-3">Statistics</h2>
+//             <div className="flex justify-between">
+//               <div className="p-4 bg-[#2A2D3E] rounded-lg">
+//                 <p>Total Users</p>
+//                 <h3 className="text-xl font-bold">150</h3>
+//               </div>
+//               <div className="p-4 bg-[#2A2D3E] rounded-lg">
+//                 <p>Total Books</p>
+//                 <h3 className="text-xl font-bold">1500</h3>
+//               </div>
+//             </div>
+//           </div>
 
-          {/* Library Transactions */}
-          <div className="bg-gradient-to-br from-[#2A2D3E] to-[#1A1C2D] p-4 rounded-2xl shadow-lg">
-            <h2 className="text-lg font-semibold mb-3">Library Transactions</h2>
-            <ul>
-              <li className="flex justify-between"><span>Nemita</span> <span className="text-green-400">+250</span></li>
-              <li className="flex justify-between"><span>John</span> <span className="text-green-400">+150</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <Borowed />
-    <Lane />
-    </>
-  );
-};
+//           {/* Library Transactions */}
+//           <div className="bg-gradient-to-br from-[#2A2D3E] to-[#1A1C2D] p-4 rounded-2xl shadow-lg">
+//             <h2 className="text-lg font-semibold mb-3">Library Transactions</h2>
+//             <ul>
+//               <li className="flex justify-between"><span>Nemita</span> <span className="text-green-400">+250</span></li>
+//               <li className="flex justify-between"><span>John</span> <span className="text-green-400">+150</span></li>
+//             </ul>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//     <Borowed />
+//     <Lane />
+//     </>
+//   );
+// };
 
-export default Dashboard;
+// export default Dashboard;
+
+
+
+// import React from 'react';
+// import { Search, Settings, Bell } from 'lucide-react';
+// import { Pie } from 'react-chartjs-2';
+// import {
+//   Chart as ChartJS,
+//   ArcElement,
+//   Tooltip,
+//   Legend,
+// } from 'chart.js';
+
+// ChartJS.register(ArcElement, Tooltip, Legend);
+
+// const Dashboard = () => {
+//   const pieData = {
+//     labels: ['Total Borrowed Books', 'Total Returned Books'],
+//     datasets: [{
+//       data: [60, 40],
+//       backgroundColor: ['#4361EE', '#A78BFA'],
+//       borderWidth: 0,
+//     }],
+//   };
+
+//   const pieOptions = {
+//     responsive: true,
+//     maintainAspectRatio: false,
+//     plugins: {
+//       legend: {
+//         display: false,
+//       },
+//     },
+//   };
+
+//   return (
+//     <div className="flex flex-col lg:flex-row min-h-screen bg-[#E4FBFF]">
+//       {/* Sidebar */}
+//       <div
+//         className="w-full lg:w-64 p-6"
+//         style={{
+//           background: 'linear-gradient(111.84deg, #3B156D 59.3%, rgba(26, 31, 55, 0) 100%)',
+//         }}
+//       >
+//         <h1 className="text-xl font-semibold text-white mb-12">LIBRARY NAME</h1>
+        
+//         {/* Main Navigation */}
+//         <div className="space-y-2 mb-12">
+//           <h2 className="text-gray-400 text-sm mb-4">MAIN MENU</h2>
+//           <a href="#" className="flex items-center space-x-3 p-3 rounded-lg bg-purple-700/50 text-white">
+//             <span>Dashboard Icon</span>
+//             <span>Dashboard</span>
+//           </a>
+//           <a href="#" className="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:bg-purple-700/30">
+//             <span>Books Icon</span>
+//             <span>Books</span>
+//           </a>
+//           <a href="#" className="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:bg-purple-700/30">
+//             <span>Billing Icon</span>
+//             <span>Billing</span>
+//           </a>
+//           <a href="#" className="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:bg-purple-700/30">
+//             <span>Catalog Icon</span>
+//             <span>Catalog</span>
+//           </a>
+//         </div>
+
+//         {/* Account Pages */}
+//         <div className="space-y-2">
+//           <h2 className="text-gray-400 text-sm mb-4">ACCOUNT PAGES</h2>
+//           <a href="#" className="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:bg-purple-700/30">
+//             <span>Profile Icon</span>
+//             <span>Profile</span>
+//           </a>
+//           <a href="#" className="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:bg-purple-700/30">
+//             <span>Sign In Icon</span>
+//             <span>Sign In</span>
+//           </a>
+//           <a href="#" className="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:bg-purple-700/30">
+//             <span>Sign Up Icon</span>
+//             <span>Sign Up</span>
+//           </a>
+//         </div>
+
+//         {/* Help Card */}
+//         <div className="mt-12 p-4 rounded-xl bg-cover bg-center" style={{ backgroundImage: "url('/help.jpeg')" }}>
+//           <span>Help Icon</span>
+//           <h3 className="text-white font-semibold mb-1">Need help?</h3>
+//           <p className="text-blue-200 text-sm mb-2">Please check our docs</p>
+//           <button className="w-full text-white rounded-lg py-2 text-sm font-medium" style={{ background: 'linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%)' }}>
+//             DOCUMENTATION
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* Main Content */}
+//       <div className="flex-1 p-6">
+//         <header className="flex flex-col lg:flex-row justify-between items-center mb-6">
+//           <div className="text-800 text-5xl mb-4 lg:mb-0">Dashboard</div>
+//           <div className="flex items-center space-x-4">
+//             <div className="relative">
+//               <input
+//                 type="text"
+//                 placeholder="Type here..."
+//                 className="pl-10 pr-4 py-1.5 rounded-full bg-[#0F1535] text-gray-400 placeholder-gray-400 w-64 text-sm focus:outline-none"
+//               />
+//               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+//             </div>
+//             <button className="text-gray-600 text-sm">Sign In</button>
+//             <button className="p-2">
+//               <Settings className="w-5 h-5 text-gray-600" />
+//             </button>
+//             <button className="p-2">
+//               <Bell className="w-5 h-5 text-gray-600" />
+//             </button>
+//           </div>
+//         </header>
+
+//         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+//           {/* Borrowed Books */}
+//           <div className="text-white p-4 rounded-lg" style={{ background: "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)" }}>
+//             <div className="flex justify-between items-center mb-4">
+//               <h2 className="text-xs font-bold">YOUR BORROWED BOOKS LIST</h2>
+//               <button className="bg-blue-500 text-white px-2 py-1 text-xs rounded-md hover:bg-blue-600">VIEW ALL</button>
+//             </div>
+//             <div className="space-y-2">
+//               {[1, 2, 3].map((_, index) => (
+//                 <div key={index} className="flex items-center justify-between p-2 rounded-md" style={{ background: "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)" }}>
+//                   <div className="flex items-center">
+//                     <img src="/1.png" alt="Book" className="w-8 h-12 object-cover mr-2" />
+//                     <div>
+//                       <p className="font-medium text-xs">Esthera Jackson</p>
+//                       <p className="text-[10px] text-gray-300">esthera@simmmp.com</p>
+//                     </div>
+//                   </div>
+//                   <div className="text-[10px] flex items-center gap-1">
+//                     <p>14/06/21</p>
+//                     <button className="text-gray-400 hover:underline">Edit</button>
+//                   </div>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+
+//           {/* Returned Books */}
+//           <div className="text-white p-4 rounded-lg" style={{ background: "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)" }}>
+//             <div className="flex justify-between items-center mb-4">
+//               <h2 className="text-xs font-bold">YOUR RETURNED BOOK LIST</h2>
+//               <button className="bg-blue-500 text-white px-2 py-1 text-xs rounded-md hover:bg-blue-600">VIEW ALL</button>
+//             </div>
+//             <div className="space-y-2">
+//               {[1, 2, 3].map((_, index) => (
+//                 <div key={index} className="flex items-center justify-between p-2 rounded-md" style={{ background: "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)" }}>
+//                   <div className="flex items-center">
+//                     <img src="/1.png" alt="Book" className="w-8 h-12 object-cover mr-2" />
+//                     <div>
+//                       <p className="font-medium text-xs">Esthera Jackson</p>
+//                       <p className="text-[10px] text-gray-300">esthera@simmmp.com</p>
+//                     </div>
+//                   </div>
+//                   <div className="text-[10px] flex items-center gap-1">
+//                     <p>14/06/21</p>
+//                     <button className="text-gray-400 hover:underline">Edit</button>
+//                   </div>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+
+//           {/* Available Books */}
+//           <div className="text-white p-4 rounded-lg" style={{ background: "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)" }}>
+//             <div className="flex justify-between items-center mb-4">
+//               <h2 className="text-xs font-bold">Browse Available Book Inventory</h2>
+//               <button className="bg-blue-500 text-white px-2 py-1 text-xs rounded-md hover:bg-blue-600">VIEW ALL</button>
+//             </div>
+//             <div className="space-y-2">
+//               {[1, 2, 3].map((_, index) => (
+//                 <div key={index} className="flex items-center justify-between p-2 rounded-md" style={{ background: "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)" }}>
+//                   <div className="flex items-center">
+//                     <img src="/1.png" alt="Book" className="w-8 h-12 object-cover mr-2" />
+//                     <div>
+//                       <p className="font-medium text-xs">Esthera Jackson</p>
+//                       <p className="text-[10px] text-gray-300">esthera@simmmp.com</p>
+//                     </div>
+//                   </div>
+//                   <div className="text-[10px] flex items-center gap-1">
+//                     <p>14/06/21</p>
+//                     <button className="text-gray-400 hover:underline">Edit</button>
+//                   </div>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+
+//         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+//           {/* Books Ratio */}
+//           <div className="bg-gradient-to-br from-[#060B28F0] to-[#595a62] rounded-2xl p-6 shadow-lg">
+//             <h2 className="font-semibold text-xl text-white text-center mb-6">BOOKS RATIO</h2>
+//             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+//               <div className="relative flex justify-center items-center">
+//                 <div className="w-48 h-48 rounded-full" style={{ background: 'conic-gradient(#314BCE 0deg 216deg, #C2A2F5 216deg 360deg)', transform: 'rotate(-215deg)' }}></div>
+//               </div>
+//               <div className="space-y-4">
+//                 <div className="flex items-center bg-[#D2BFFF] p-4 rounded-xl shadow-md">
+//                   <div className="bg-[#4760FF] p-2 rounded-lg">
+//                     <span>User Icon</span>
+//                   </div>
+//                   <div className="ml-3">
+//                     <p className="text-lg font-bold text-black">0150</p>
+//                     <p className="text-sm text-gray-700">Total User Base</p>
+//                   </div>
+//                 </div>
+//                 <div className="flex items-center bg-[#D2BFFF] p-4 rounded-xl shadow-md">
+//                   <div className="bg-[#F8D25B] p-2 rounded-lg">
+//                     <span>Book Icon</span>
+//                   </div>
+//                   <div className="ml-3">
+//                     <p className="text-lg font-bold text-black">01500</p>
+//                     <p className="text-sm text-gray-700">Total Book Count</p>
+//                   </div>
+//                 </div>
+//                 <div className="mt-4 bg-[#F8D25B] p-3 rounded-xl">
+//                   <div className="flex flex-col gap-4">
+//                     <div className="flex items-center gap-2">
+//                       <div className="w-3 h-3 rounded-full bg-[#C2A2F5]"></div>
+//                       <span className="text-sm font-medium text-black">Total Borrowed Books</span>
+//                     </div>
+//                     <div className="flex items-center gap-2">
+//                       <div className="w-3 h-3 rounded-full bg-[#4760FF]"></div>
+//                       <span className="text-sm font-medium text-black">Total Returned Books</span>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* Transactions */}
+//           <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-2xl p-6 shadow-lg">
+//             <div className="flex justify-between items-center mb-6">
+//               <h2 className="font-semibold text-lg">Your Transactions</h2>
+//               <div className="text-sm text-gray-400 flex items-center gap-2">
+//                 <span>Calendar Icon</span>
+//                 <span>23 - 30 March 2020</span>
+//               </div>
+//             </div>
+//             <div className="space-y-6">
+//               <div>
+//                 <h3 className="text-gray-500 text-sm uppercase mb-2">Newest</h3>
+//                 <div className="flex items-center justify-between">
+//                   <div className="flex items-center gap-4">
+//                     <span className="material-icons text-red-400 text-lg">Netflix Icon</span>
+//                     <div>
+//                       <p className="font-medium">Netflix</p>
+//                       <p className="text-xs text-gray-500">27 March 2020, at 12:30 PM</p>
+//                     </div>
+//                   </div>
+//                   <span className="text-red-400 font-medium">-$2500</span>
+//                 </div>
+//                 <div className="flex items-center justify-between">
+//                   <div className="flex items-center gap-3">
+//                     <span className="material-icons text-green-400 text-lg">Apple Icon</span>
+//                     <div>
+//                       <p className="font-medium">Apple</p>
+//                       <p className="text-xs text-gray-500">27 March 2020, at 12:30 PM</p>
+//                     </div>
+//                   </div>
+//                   <span className="text-green-400 font-medium">+$2500</span>
+//                 </div>
+//               </div>
+//               <div>
+//                 <h3 className="text-gray-500 text-sm uppercase mb-2">Yesterday</h3>
+//                 <div className="flex items-center justify-between">
+//                   <div className="flex items-center gap-3">
+//                     <span className="material-icons text-green-400 text-lg">Stripe Icon</span>
+//                     <div>
+//                       <p className="font-medium">Stripe</p>
+//                       <p className="text-xs text-gray-500">26 March 2020, at 13:45 PM</p>
+//                     </div>
+//                   </div>
+//                   <span className="text-green-400 font-medium">+$800</span>
+//                 </div>
+//                 <div className="flex items-center justify-between">
+//                   <div className="flex items-center gap-3">
+//                     <span className="material-icons text-green-400 text-lg">HubSpot Icon</span>
+//                     <div>
+//                       <p className="font-medium">HubSpot</p>
+//                       <p className="text-xs text-gray-500">26 March 2020, at 12:30 PM</p>
+//                     </div>
+//                   </div>
+//                   <span className="text-green-400 font-medium">+$1700</span>
+//                 </div>
+//                 <div className="flex items-center justify-between">
+//                   <div className="flex items-center gap-3">
+//                     <span className="material-icons text-gray-400 text-lg">Webflow Icon</span>
+//                     <div>
+//                       <p className="font-medium">Webflow</p>
+//                       <p className="text-xs text-gray-500">26 March 2020, at 05:00 AM</p>
+//                     </div>
+//                   </div>
+//                   <span className="text-gray-400 font-medium">Pending</span>
+//                 </div>
+//                 <div className="flex items-center justify-between">
+//                   <div className="flex items-center gap-3">
+//                     <span className="material-icons text-red-400 text-lg">Microsoft Icon</span>
+//                     <div>
+//                       <p className="font-medium">Microsoft</p>
+//                       <p className="text-xs text-gray-500">25 March 2020, at 16:30 PM</p>
+//                     </div>
+//                   </div>
+//                   <span className="text-red-400 font-medium">-$987</span>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Dashboard;
+
+
