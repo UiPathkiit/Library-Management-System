@@ -5,14 +5,14 @@ import Link from "next/link";
 const AuthPage = () => {
   return (
     <div className="flex flex-wrap md:flex-nowrap h-screen w-full bg-[#CDF6FB]">
-      <div className="w-full md:w-1/3 bg-purple-600 flex flex-col justify-center items-center p-6 md:p-10 text-white  md:rounded-r-3xl">
+      <div className="w-full md:w-1/2 bg-purple-600 flex flex-col justify-center items-center p-6 md:p-10 text-white  md:rounded-r-3xl">
         <h1 className="text-4xl md:text-5xl font-bold">LIBRARY</h1>
         <p className="text-md md:text-lg mt-6 md:mt-10 w-64 md:w-56 text-center">
           "Your premier digital library for borrowing and reading books"
         </p>
       </div>
 
-      <div className="relative w-full md:w-2/3 bg-[#CDF6FB] flex flex-col justify-center items-center p-6 md:p-10">
+      <div className="relative w-full md:w-1/2 bg-[#CDF6FB] flex flex-col justify-center items-center p-6 md:p-10">
         <Link
           href="/aotp"
           className="absolute top-5 right-5 bg-white border border-gray-300 px-3 py-1 text-sm rounded-lg hover:bg-gray-200"
